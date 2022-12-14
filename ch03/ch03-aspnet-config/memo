@@ -1,0 +1,159 @@
+docker container run -d -P `
+-v $pwd\prod-config:C:\inetpub\wwwroot\config `
+dockeronwindows/ch03-aspnet-config:2e
+
+p113 config copy not working T_T
+아마 iis wwwroot 계정권한 문제 같음
+
+Microsoft Windows [Version 10.0.14393]X
+(c) 2016 Microsoft Corporation. All rights reserved.X
+X
+C:\>dirX
+ Volume in drive C has no label.X
+ Volume Serial Number is C025-ABC1X
+X
+ Directory of C:\X
+X
+12/10/2022  01:17 PM    <DIR>          inetpubX
+11/05/2022  10:42 PM             5,647 License.txtX
+11/05/2022  10:44 PM    <DIR>          PerfLogsX
+11/05/2022  10:55 PM    <DIR>          Program FilesX
+07/16/2016  10:18 PM    <DIR>          Program Files (x86)X
+11/09/2022  05:41 AM    <DIR>          RoslynCompilersX
+11/09/2022  05:43 AM    <DIR>          RoslynCompilers-3.6.0X
+11/09/2022  05:38 AM           168,344 ServiceMonitor.exeX
+11/09/2022  05:43 AM    <DIR>          UsersX
+11/09/2022  05:43 AM    <DIR>          WindowsX
+               2 File(s)        173,991 bytesX
+               8 Dir(s)  21,191,794,688 bytes freeX
+X
+C:\>cd inetpubX
+X
+C:\inetpub>dirX
+ Volume in drive C has no label.X
+ Volume Serial Number is C025-ABC1X
+X
+ Directory of C:\inetpubX
+X
+11/09/2022  05:43 AM    <DIR>          .X
+11/09/2022  05:43 AM    <DIR>          ..X
+11/09/2022  05:37 AM    <DIR>          custerrX
+11/09/2022  05:39 AM    <DIR>          historyX
+11/09/2022  05:37 AM    <DIR>          logsX
+12/10/2022  01:17 PM    <DIR>          tempX
+12/10/2022  01:16 PM    <DIR>          wwwrootX
+               0 File(s)              0 bytesX
+               7 Dir(s)  21,191,790,592 bytes freeX
+
+C:\inetpub>
+C:\inetpub>
+C:\inetpub>cd wwwroot
+
+C:\inetpub\wwwroot>dir
+ Volume in drive C has no label.
+ Volume Serial Number is C025-ABC1
+
+ Directory of C:\inetpub\wwwroot
+
+12/10/2022  01:16 PM    <DIR>          .
+12/10/2022  01:16 PM    <DIR>          ..
+12/10/2022  01:16 PM    <DIR>          config
+12/06/2022  05:32 PM             1,812 default.aspx
+12/06/2022  05:32 PM               388 Web.config
+               2 File(s)          2,200 bytes
+               3 Dir(s)  21,191,790,592 bytes free
+
+C:\inetpub\wwwroot>takeown /f config
+
+SUCCESS: The file (or folder): "C:\inetpub\wwwroot\config" now owned by user "User Manager\ContainerAdministrator".
+
+C:\inetpub\wwwroot>icacls config
+config BUILTIN\IIS_IUSRS:(RX)
+       BUILTIN\IIS_IUSRS:(OI)(CI)(IO)(GR,GE)
+       NT SERVICE\TrustedInstaller:(F)
+       NT SERVICE\TrustedInstaller:(I)(OI)(CI)(IO)(F)
+       NT AUTHORITY\SYSTEM:(F)
+       NT AUTHORITY\SYSTEM:(I)(OI)(CI)(IO)(F)
+       BUILTIN\Administrators:(F)
+       BUILTIN\Administrators:(I)(OI)(CI)(IO)(F)
+       BUILTIN\Users:(RX)
+       BUILTIN\Users:(I)(OI)(CI)(IO)(GR,GE)
+       CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+
+
+C:\inetpub\wwwroot>takeown /f config
+
+SUCCESS: The file (or folder): "C:\inetpub\wwwroot\config" now owned by user "User Manager\ContainerAdministrator".
+
+C:\inetpub\wwwroot>icacls config
+config BUILTIN\IIS_IUSRS:(RX)
+       BUILTIN\IIS_IUSRS:(OI)(CI)(IO)(GR,GE)
+       NT SERVICE\TrustedInstaller:(F)
+       NT SERVICE\TrustedInstaller:(I)(OI)(CI)(IO)(F)
+       NT AUTHORITY\SYSTEM:(F)
+       NT AUTHORITY\SYSTEM:(I)(OI)(CI)(IO)(F)
+       BUILTIN\Administrators:(F)
+       BUILTIN\Administrators:(I)(OI)(CI)(IO)(F)
+       BUILTIN\Users:(RX)
+       BUILTIN\Users:(I)(OI)(CI)(IO)(GR,GE)
+       CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+
+C:\inetpub\wwwroot>
+
+
+
+----
+Microsoft Windows [Version 10.0.14393]X
+(c) 2016 Microsoft Corporation. All rights reserved.X
+X
+C:\>cd inetpub\wwwrootX
+X
+C:\inetpub\wwwroot>icacls confiigX
+confiig: The system cannot find the file specified.X
+Successfully processed 0 files; Failed processing 1 filesX
+X
+C:\inetpub\wwwroot>icacls config X
+config BUILTIN\IIS_IUSRS:(RX)X
+       BUILTIN\IIS_IUSRS:(OI)(CI)(IO)(GR,GE)X
+       NT SERVICE\TrustedInstaller:(F)X
+       NT SERVICE\TrustedInstaller:(I)(OI)(CI)(IO)(F)X
+       NT AUTHORITY\SYSTEM:(F)X
+       NT AUTHORITY\SYSTEM:(I)(OI)(CI)(IO)(F)X
+       BUILTIN\Administrators:(F)X
+       BUILTIN\Administrators:(I)(OI)(CI)(IO)(F)X
+       BUILTIN\Users:(RX)X
+       BUILTIN\Users:(I)(OI)(CI)(IO)(GR,GE)X
+       CREATOR OWNER:(I)(OI)(CI)(IO)(F)X
+X
+Successfully processed 1 files; Failed processing 0 filesX
+X
+C:\inetpub\wwwroot>icacls config1X
+config1 BUILTIN\Administrators:(F)X
+        BUILTIN\Administrators:(OI)(CI)(IO)(F)X
+        NT AUTHORITY\SYSTEM:(F)X
+        NT AUTHORITY\SYSTEM:(OI)(CI)(IO)(F)X
+        NT AUTHORITY\Authenticated Users:(M)X
+        NT AUTHORITY\Authenticated Users:(OI)(CI)(IO)(M)X
+        BUILTIN\Users:(RX)X
+        BUILTIN\Users:(OI)(CI)(IO)(GR,GE)X
+X
+Successfully processed 1 files; Failed processing 0 filesX
+X
+C:\inetpub\wwwroot>icacls ..     X
+.. NT SERVICE\TrustedInstaller:(F)X
+   NT SERVICE\TrustedInstaller:(OI)(CI)(IO)(F)X
+   NT AUTHORITY\SYSTEM:(F)X
+   NT AUTHORITY\SYSTEM:(OI)(CI)(IO)(F)X
+   BUILTIN\Administrators:(F)X
+   BUILTIN\Administrators:(OI)(CI)(IO)(F)X
+   BUILTIN\Users:(RX)X
+   BUILTIN\Users:(OI)(CI)(IO)(GR,GE)X
+   CREATOR OWNER:(OI)(CI)(IO)(F)X
+X
+Successfully processed 1 files; Failed processing 0 filesX
+X
+C:\inetpub\wwwroot>X
