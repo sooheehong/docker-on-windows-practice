@@ -1,0 +1,13 @@
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\HelloWorld.NetCore.deps.json
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\HelloWorld.NetCore.runtimeconfig.json
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\HelloWorld.NetCore.runtimeconfig.dev.json
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\HelloWorld.NetCore.dll
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\HelloWorld.NetCore.pdb
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.csproj.AssemblyReference.cache
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.AssemblyInfoInputs.cache
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.AssemblyInfo.cs
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.csproj.CoreCompileInputs.cache
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.dll
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.pdb
+D:\Docker\ch02\ch02-dotnet-helloworld\src\obj\Debug\netcoreapp2.2\HelloWorld.NetCore.genruntimeconfig.cache

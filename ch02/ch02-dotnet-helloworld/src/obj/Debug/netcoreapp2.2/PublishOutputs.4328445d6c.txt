@@ -1,0 +1,4 @@
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\publish\HelloWorld.NetCore.dll
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\publish\HelloWorld.NetCore.deps.json
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\publish\HelloWorld.NetCore.runtimeconfig.json
+D:\Docker\ch02\ch02-dotnet-helloworld\src\bin\Debug\netcoreapp2.2\publish\HelloWorld.NetCore.pdb

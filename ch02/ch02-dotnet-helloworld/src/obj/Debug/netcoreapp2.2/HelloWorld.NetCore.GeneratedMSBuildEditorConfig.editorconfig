@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = HelloWorld.NetCore
+build_property.ProjectDir = D:\Docker\ch02\ch02-dotnet-helloworld\src\
